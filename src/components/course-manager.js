@@ -1,6 +1,7 @@
 import React from "react";
 import CourseTable from "./course-table";
 import CourseGrid from "./course-grid";
+import {Route} from "react-router-dom";
 
 class CourseManager extends React.Component {
     state = {
@@ -15,8 +16,10 @@ class CourseManager extends React.Component {
         return (
             <div>
                 <h1>Course Manager</h1>
-                <CourseTable courses={this.state.courses}/>
-                <CourseGrid courses={this.state.courses}/>
+                <Route path="/courses/grid" component={CourseGrid}/>
+                <Route path="/courses/table" component={CourseTable}/>
+                {/*<CourseTable courses={this.state.courses}/>*/}
+                {/*<CourseGrid courses={this.state.courses}/>*/}
             </div>
         )
     }
