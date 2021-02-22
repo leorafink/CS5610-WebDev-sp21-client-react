@@ -26,6 +26,19 @@ export default class CourseTable extends
                     <CourseRow title="CS5800" owner="you"/>
                     <CourseRow title="CS5200" owner="her"/>
                     <CourseRow title="CS4550" owner="him"/>*/}
+
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Owned By</th>
+                        <th>Last Modified</th>
+                        <th>
+                            <i className="fas fa-folder"></i>
+                            <i className="fas fa-sort-alpha-up"></i>
+                            &nbsp;
+                        </th>
+                    </tr>
+                    </thead>
                     {
                         this.props.courses.map(course =>
                             <CourseRow
