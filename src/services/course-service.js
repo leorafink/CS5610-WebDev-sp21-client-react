@@ -9,3 +9,21 @@ export const deleteCourse = (courseID) =>
         method: 'DELETE'
     })
         .then(response => response.json())
+
+export const createCourse = (course) =>
+    fetch(COURSES_URL, {
+        method: 'POST',
+        body: JSON.stringify(course),
+        headers: {
+            'content-type': 'application/json'
+        }
+    })
+        .then(response => response.json())
+
+const api = {
+    findAllCourses: findAllCourses,
+    deleteCourse: deleteCourse,
+    createCourse: createCourse
+}
+
+export default api;

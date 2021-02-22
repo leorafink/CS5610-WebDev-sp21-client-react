@@ -2,7 +2,7 @@ import React from "react";
 import CourseTable from "./course-table";
 import CourseGrid from "./course-grid";
 import {Route} from "react-router-dom";
-import {findAllCourses, deleteCourse} from "../services/course-service";
+import courseService, {findAllCourses, deleteCourse} from "../services/course-service";
 
 class CourseManager extends React.Component {
     state = {
@@ -10,13 +10,13 @@ class CourseManager extends React.Component {
     }
 
     componentDidMount() {
-        findAllCourses()
+        courseService.findAllCourses()
             .then(courses => this.setState({courses}))
     }
 
     deleteCourse = (course) => {
         alert("delete Course " + course._id)
-        deleteCourse(course._id)
+        courseService.deleteCourse(course._id)
             .then(status => {
                 // this.setState({
                 //     courses: this.state.courses.filter(c => c._id !== course._id)
@@ -33,8 +33,12 @@ class CourseManager extends React.Component {
             owner: "me",
             lastModified: "2/12/2021"
         }
-        this.state.courses.push(newCourse)
-        this.setState(this.state)
+        courseService.createCourse(newCourse)
+            .then(actualCourse => {
+                this.state.courses.push(actualCourse)
+                this.setState(this.state)
+            })
+
     }
 
     render() {
