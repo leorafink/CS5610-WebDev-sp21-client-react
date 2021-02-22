@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import "./course-manager-style.css"
+import "../course-manager-style.css"
 
 const CourseRow = ({
                        course,

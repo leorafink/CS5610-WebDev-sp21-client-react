@@ -1,4 +1,4 @@
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
     .LF-disappear {
         display: none;
     }
@@ -6,6 +6,12 @@
 
 @media only screen and (max-width: 576px) {
     .LF-disappearXs {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .LF-disappearS {
         display: none;
     }
 }
