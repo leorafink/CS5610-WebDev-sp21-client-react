@@ -69,10 +69,33 @@ export default class CourseManager extends React.Component {
                 <Link to="/">
                     <i className="fas fa-2x fa-home float-right"></i>
                 </Link>
-                <h1>Course Manager</h1>
-                <button onClick={this.addCourse}>
-                    Add Course
-                </button>
+                {/*<h1>Course Manager</h1>*/}
+
+
+                <div>
+                    <div className="row">
+                        <div className="col-1">
+                            <i className="fa fa-bars fa-2x"></i>
+                        </div>
+                        <div className="col-2">
+                            <h4 className="disappear">Course Manager</h4>
+                        </div>
+                        <div className="col-8">
+                            <input id="inputTitle" className="form-control"/>
+                        </div>
+                        <div className="col-1">
+                            {/*<i onClick={this.addCourse(document.getElementById("inputTitle").val())} className="fa fa-plus-circle fa-2x"></i>*/}
+                            <i onClick={this.addCourse} className="fa fa-plus-circle fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                {/*<button onClick={this.addCourse}>*/}
+                {/*    Add Course*/}
+                {/*</button>*/}
+
                 {/*<Route path="/courses/grid" component={CourseGrid}/>*/}
                 <Route path="/courses/grid" exact={true}>
                     <CourseGrid courses={this.state.courses}/>

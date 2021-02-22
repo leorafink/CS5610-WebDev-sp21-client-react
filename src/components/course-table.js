@@ -13,10 +13,35 @@ export default class CourseTable extends
     render() {
         return(
             <div>
-                <Link to="/courses/grid">
-                    <i className="fas fa-th float-right fa-2x"></i>
-                </Link>
-                <h2>Course Table</h2>
+                {/*<Link to="/courses/grid">*/}
+                {/*    <i className="fas fa-th float-right fa-2x"></i>*/}
+                {/*</Link>*/}
+
+{/*<div>*/}
+{/*    <div className="row">*/}
+{/*        <div className="col-1">*/}
+{/*            <i className="fa fa-bars fa-2x"></i>*/}
+{/*        </div>*/}
+{/*        <div className="col-2">*/}
+{/*            <h4 className="disappear">Course Table</h4>*/}
+{/*        </div>*/}
+{/*        <div className="col-8">*/}
+{/*            <input className="form-control"/>*/}
+{/*        </div>*/}
+{/*        <div className="col-1">*/}
+{/*            <i className="fa fa-plus-circle fa-2x"></i>*/}
+{/*        </div>*/}
+{/*    </div>*/}
+{/*</div>*/}
+{/*<br/>*/}
+
+            {/*<h2>*/}
+
+            {/*        <i className="fas fa-bars"></i>*/}
+            {/*        Course Table*/}
+            {/*        <input/>*/}
+            {/*</h2>*/}
+
                 {/*<Link to="/courses/grid">*/}
                 {/*<i className="fas fa-table float-right"></i>*/}
                 {/*</Link>*/}
@@ -35,6 +60,9 @@ export default class CourseTable extends
                         <th>
                             <i className="fas fa-folder"></i>
                             <i className="fas fa-sort-alpha-up"></i>
+                            <Link to="/courses/grid">
+                                <i className="fas fa-th float-right fa-2x"></i>
+                            </Link>
                             &nbsp;
                         </th>
                     </tr>
