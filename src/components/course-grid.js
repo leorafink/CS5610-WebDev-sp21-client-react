@@ -3,13 +3,11 @@ import {Link} from "react-router-dom";
 
 const CourseGrid = ({courses}) =>
     <div>
-     <h2>Course Grid</h2>
         <Link to="/courses/table">
-          <i className="fas fa-list float-right"></i>
+            <i className="fas fa-2x fa-list float-right"></i>
         </Link>
-        <Link to="/editor">
-            CS 5610
-        </Link>
+     <h2>Course Grid</h2>
+
 
         <div className="row">
         {
