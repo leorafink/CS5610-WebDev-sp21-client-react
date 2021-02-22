@@ -1,7 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const CourseRow = ({course}) =>
+const CourseRow = ({
+                       course,
+                       deleteCourse
+                    }) =>
     <tr>
         <td>
             <Link to="/editor">
@@ -11,7 +14,7 @@ const CourseRow = ({course}) =>
         <td>{course.owner}</td>
         <td>{course.lastModified}</td>
         <td>
-            <i className="fas fa-trash"></i>
+            <i onClick={() => deleteCourse(course)} className="fas fa-trash"></i>
             <i className="fas fa-edit"></i>
             <i className="fas fa-check"></i>
         </td>

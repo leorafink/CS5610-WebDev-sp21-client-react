@@ -26,6 +26,7 @@ export default class CourseTable extends
                     {
                         this.props.courses.map(course =>
                             <CourseRow
+                                deleteCourse={this.props.deleteCourse}
                                 course={course}
                              /*   title={course.title}
                                 owner={course.owner}
