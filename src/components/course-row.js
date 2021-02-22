@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
+import "./course-manager-style.css"
 
 const CourseRow = ({
                        course,
@@ -35,8 +36,8 @@ const CourseRow = ({
                     value={title}/>
             }
         </td>
-        <td>{course.owner}</td>
-        <td>{course.lastModified}</td>
+        <td className="LF-disappearXs">{course.owner}</td>
+        <td className="LF-disappear">{course.lastModified}</td>
         <td>
             <i onClick={() => deleteCourse(course)} className="fas fa-trash"></i>
 

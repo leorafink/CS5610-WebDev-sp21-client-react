@@ -3,6 +3,7 @@ import CourseTable from "./course-table";
 import CourseGrid from "./course-grid";
 import {Route, Link} from "react-router-dom";
 import courseService, {findAllCourses, deleteCourse} from "../services/course-service";
+import "./course-manager-style.css"
 
 export default class CourseManager extends React.Component {
     state = {
@@ -78,10 +79,10 @@ export default class CourseManager extends React.Component {
                             <i className="fa fa-bars fa-2x"></i>
                         </div>
                         <div className="col-2">
-                            <h4 className="disappear">Course Manager</h4>
+                            <h4 className="disappear LF-disappear">Course Manager</h4>
                         </div>
                         <div className="col-8">
-                            <input id="inputTitle" className="form-control"/>
+                            <input id="inputTitle" className="form-control" placeholder="testt"/>
                         </div>
                         <div className="col-1">
                             {/*<i onClick={this.addCourse(document.getElementById("inputTitle").val())} className="fa fa-plus-circle fa-2x"></i>*/}
