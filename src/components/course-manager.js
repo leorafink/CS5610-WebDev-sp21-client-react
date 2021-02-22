@@ -1,7 +1,7 @@
 import React from "react";
 import CourseTable from "./course-table";
 import CourseGrid from "./course-grid";
-import {Route} from "react-router-dom";
+import {Route, Link} from "react-router-dom";
 import courseService, {findAllCourses, deleteCourse} from "../services/course-service";
 
 export default class CourseManager extends React.Component {
@@ -15,8 +15,22 @@ export default class CourseManager extends React.Component {
     }
 
     updateCourse = (course) => {
+        courseService.updateCourse(course._id, course)
+            .then(status => {
+                this.setState((prevState) => {
+                    let nextState = {...prevState}
+                    nextState.courses = prevState.courses.map(c => {
+                        if(c._id === course._id) {
+                            return course
+                        } else {
+                            return c
+                        }
+                    })
+                    return nextState
+                })
+            })
 
-        console.log(course)
+       // console.log(course)
     }
 
     deleteCourse = (course) => {
@@ -49,16 +63,19 @@ export default class CourseManager extends React.Component {
     render() {
         return (
             <div>
+                <Link to="/">
+                    <i className="fas fa-2x fa-home float-right"></i>
+                </Link>
                 <h1>Course Manager</h1>
                 <button onClick={this.addCourse}>
                     Add Course
                 </button>
                 {/*<Route path="/courses/grid" component={CourseGrid}/>*/}
-                <Route path="/courses/grid">
+                <Route path="/courses/grid" exact={true}>
                     <CourseGrid courses={this.state.courses}/>
                 </Route>
                 {/*<Route path="/courses/table" component={CourseTable}/>*/}
-                <Route path="/courses/table">
+                <Route path="/courses/table" exact={true}>
                     <CourseTable
                         updateCourse={this.updateCourse}
                         deleteCourse={this.deleteCourse}
