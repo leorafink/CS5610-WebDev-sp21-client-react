@@ -3,10 +3,22 @@ import {Link} from "react-router-dom";
 
 const CourseRow = ({
                        course,
-                       deleteCourse
+                       deleteCourse,
+                        updateCourse
                     }) => {
 
     const [editing, setEditing] = useState(false)
+    const [title, setTitle] = useState(course.title)
+
+    const saveCourse = () => {
+        setEditing(false)
+        const newCourse = {
+            ...course,
+            title: title
+        }
+        updateCourse(newCourse)
+    }
+
     return (<tr>
         <td>
             {
@@ -17,7 +29,9 @@ const CourseRow = ({
             }
             {
                 editing &&
-                <input value={course.title}/>
+                <input
+                    onChange={(e) => setTitle(e.target.event)}
+                    value={title}/>
             }
         </td>
         <td>{course.owner}</td>
@@ -27,7 +41,7 @@ const CourseRow = ({
 
             {
                 editing &&
-                <i onClick={() => setEditing(false)} className="fas fa-check"></i>
+                <i onClick={() => saveCourse()} className="fas fa-check"></i>
             }
 
             {

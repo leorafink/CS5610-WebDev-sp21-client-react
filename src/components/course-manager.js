@@ -4,7 +4,7 @@ import CourseGrid from "./course-grid";
 import {Route} from "react-router-dom";
 import courseService, {findAllCourses, deleteCourse} from "../services/course-service";
 
-class CourseManager extends React.Component {
+export default class CourseManager extends React.Component {
     state = {
         courses: []
     }
@@ -12,6 +12,11 @@ class CourseManager extends React.Component {
     componentDidMount() {
         courseService.findAllCourses()
             .then(courses => this.setState({courses}))
+    }
+
+    updateCourse = (course) => {
+
+        console.log(course)
     }
 
     deleteCourse = (course) => {
@@ -54,7 +59,10 @@ class CourseManager extends React.Component {
                 </Route>
                 {/*<Route path="/courses/table" component={CourseTable}/>*/}
                 <Route path="/courses/table">
-                    <CourseTable deleteCourse={this.deleteCourse} courses={this.state.courses}/>
+                    <CourseTable
+                        updateCourse={this.updateCourse}
+                        deleteCourse={this.deleteCourse}
+                        courses={this.state.courses}/>
                 </Route>
                 {/*<CourseTable courses={this.state.courses}/>*/}
                 {/*<CourseGrid courses={this.state.courses}/>*/}
@@ -62,4 +70,4 @@ class CourseManager extends React.Component {
         )
     }
 }
-export default CourseManager
+//export default CourseManager
