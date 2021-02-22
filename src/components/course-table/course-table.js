@@ -74,9 +74,6 @@ export default class CourseTable extends
                                 deleteCourse={this.props.deleteCourse}
                                 updateCourse={this.props.updateCourse}
                                 course={course}
-                             /*   title={course.title}
-                                owner={course.owner}
-                                lastModified={course.lastModified}*/
                             />)
                     }
                 </table>

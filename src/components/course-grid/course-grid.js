@@ -2,8 +2,9 @@ import React from "react";
 import {Link} from "react-router-dom";
 import "../course-manager-style.css"
 import "./course-grid-style.css"
+import CourseCard from "../course-grid/course-card";
 
-const CourseGrid = ({courses}) =>
+const CourseGrid = (props, {courses}) =>
     <div>
         {/*<Link to="/courses/table">*/}
         {/*    <i className="fas fa-2x fa-list float-right"></i>*/}
@@ -33,19 +34,27 @@ const CourseGrid = ({courses}) =>
 
         <div className="row">
         {
-            courses.map(course =>
-                <div className="card" style={{width: "18rem"}}>
-                    <img src="..." className="card-img-top" alt="..."/>
-                    <div className="card-body">
-                        <h5 className="card-title">{course.title}</h5>
-                        <p className="card-text">Some quick example text to
-                            the cards content.</p>
-                        <Link to="/editor" className="btn btn-primary">
-                            Go Somewhere
-                        </Link>
-                    </div>
+            props.courses.map(course =>
 
-                </div>
+
+                    <CourseCard
+                        deleteCourse={props.deleteCourse}
+                        updateCourse={props.updateCourse}
+                        course={course}
+                    />
+
+                // <div className="card" style={{width: "18rem"}}>
+                //     <img src="..." className="card-img-top" alt="..."/>
+                //     <div className="card-body">
+                //         <h5 className="card-title">{course.title}</h5>
+                //         <p className="card-text">Some quick example text to
+                //             the cards content.</p>
+                //         <Link to="/editor" className="btn btn-primary">
+                //             {course.title}
+                //         </Link>
+                //     </div>
+                //
+                // </div>
             )
         }
         </div>
