@@ -16,6 +16,7 @@ const CourseRow = ({
             ...course,
             title: title
         }
+
         updateCourse(newCourse)
     }
 
@@ -30,7 +31,7 @@ const CourseRow = ({
             {
                 editing &&
                 <input
-                    onChange={(e) => setTitle(e.target.event)}
+                    onChange={(e) => setTitle(e.target.value)}
                     value={title}/>
             }
         </td>

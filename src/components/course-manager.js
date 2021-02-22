@@ -15,8 +15,10 @@ export default class CourseManager extends React.Component {
     }
 
     updateCourse = (course) => {
+
         courseService.updateCourse(course._id, course)
             .then(status => {
+
                 this.setState((prevState) => {
                     let nextState = {...prevState}
                     nextState.courses = prevState.courses.map(c => {
@@ -54,6 +56,7 @@ export default class CourseManager extends React.Component {
         }
         courseService.createCourse(newCourse)
             .then(actualCourse => {
+
                 this.state.courses.push(actualCourse)
                 this.setState(this.state)
             })

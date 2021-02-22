@@ -11,6 +11,7 @@ const CourseGrid = ({courses}) =>
             CS 5610
         </Link>
 
+        <div className="row">
         {
             courses.map(course =>
                 <div className="card" style={{width: "18rem"}}>
@@ -27,6 +28,7 @@ const CourseGrid = ({courses}) =>
                 </div>
             )
         }
+        </div>
 
 
     </div>
