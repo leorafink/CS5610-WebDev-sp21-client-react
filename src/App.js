@@ -8,7 +8,8 @@ function App() {
   return (
       <BrowserRouter>
           <Route path="/courses" component={CourseManager}/>
-          <Route path="/editor" component={CourseEditor}/>
+          {/*<Route path="/editor" component={CourseEditor}/>*/}
+          <Route path="/editor" render={(props) => <CourseEditor {...props}/>}/>
         {/*<div className="container-fluid">
             <CourseManager/>
             <CourseEditor/>

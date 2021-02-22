@@ -12,12 +12,32 @@ class CourseManager extends React.Component {
             {title: "CS5800", owner: "her", lastModified: "6/1/2021"}
         ]
     }
+
+    addCourse = () => {
+        const newCourse = {
+            title: "New Course",
+            owner: "me",
+            lastModified: "2/12/2021"
+        }
+        this.state.courses.push(newCourse)
+        this.setState(this.state)
+    }
+
     render() {
         return (
             <div>
                 <h1>Course Manager</h1>
-                <Route path="/courses/grid" component={CourseGrid}/>
-                <Route path="/courses/table" component={CourseTable}/>
+                <button onClick={this.addCourse}>
+                    Add Course
+                </button>
+                {/*<Route path="/courses/grid" component={CourseGrid}/>*/}
+                <Route path="/courses/grid">
+                    <CourseGrid courses={this.state.courses}/>
+                </Route>
+                {/*<Route path="/courses/table" component={CourseTable}/>*/}
+                <Route path="/courses/table">
+                    <CourseTable courses={this.state.courses}/>
+                </Route>
                 {/*<CourseTable courses={this.state.courses}/>*/}
                 {/*<CourseGrid courses={this.state.courses}/>*/}
             </div>
