@@ -105,36 +105,27 @@ export default class CourseManager extends React.Component {
                                 />
                         </div>
                         <div className="col-1">
-                            {/*<i onClick={this.addCourse(document.getElementById("inputTitle").val())} className="fa fa-plus-circle fa-2x"></i>*/}
                             <i onClick={this.addCourse} className="fa fa-plus-circle fa-2x"></i>
                         </div>
                     </div>
                 </div>
 
 
-
-                {/*<button onClick={this.addCourse}>*/}
-                {/*    Add Course*/}
-                {/*</button>*/}
-
-                {/*<Route path="/courses/grid" component={CourseGrid}/>*/}
                 <Route path="/courses/grid" exact={true}>
                     <CourseGrid
                         courses={this.state.courses}
                         updateCourse={this.updateCourse}
                         deleteCourse={this.deleteCourse}/>
                 </Route>
-                {/*<Route path="/courses/table" component={CourseTable}/>*/}
+
                 <Route path="/courses/table" exact={true}>
                     <CourseTable
                         updateCourse={this.updateCourse}
                         deleteCourse={this.deleteCourse}
                         courses={this.state.courses}/>
                 </Route>
-                {/*<CourseTable courses={this.state.courses}/>*/}
-                {/*<CourseGrid courses={this.state.courses}/>*/}
+
             </div>
         )
     }
 }
-//export default CourseManager

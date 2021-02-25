@@ -14,44 +14,12 @@ export default class CourseTable extends
     render() {
         return(
             <div>
-                {/*<Link to="/courses/grid">*/}
-                {/*    <i className="fas fa-th float-right fa-2x"></i>*/}
-                {/*</Link>*/}
 
-{/*<div>*/}
-{/*    <div className="row">*/}
-{/*        <div className="col-1">*/}
-{/*            <i className="fa fa-bars fa-2x"></i>*/}
-{/*        </div>*/}
-{/*        <div className="col-2">*/}
-{/*            <h4 className="disappear">Course Table</h4>*/}
-{/*        </div>*/}
-{/*        <div className="col-8">*/}
-{/*            <input className="form-control"/>*/}
-{/*        </div>*/}
-{/*        <div className="col-1">*/}
-{/*            <i className="fa fa-plus-circle fa-2x"></i>*/}
-{/*        </div>*/}
-{/*    </div>*/}
-{/*</div>*/}
-{/*<br/>*/}
 
-            {/*<h2>*/}
 
-            {/*        <i className="fas fa-bars"></i>*/}
-            {/*        Course Table*/}
-            {/*        <input/>*/}
-            {/*</h2>*/}
-
-                {/*<Link to="/courses/grid">*/}
-                {/*<i className="fas fa-table float-right"></i>*/}
-                {/*</Link>*/}
 
                 <table className="table">
-                    {/*<CourseRow title="CS5610" owner="me"/>
-                    <CourseRow title="CS5800" owner="you"/>
-                    <CourseRow title="CS5200" owner="her"/>
-                    <CourseRow title="CS4550" owner="him"/>*/}
+
 
                     <thead>
                     <tr>

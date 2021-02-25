@@ -41,7 +41,7 @@ const CourseCard = ({
                         value={title}/>
                 }
 
-                {/*{course.title}*/}
+
             </h5>
 
             <p className="card-text">Some quick example text to

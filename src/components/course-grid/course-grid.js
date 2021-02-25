@@ -6,9 +6,7 @@ import CourseCard from "../course-grid/course-card";
 
 const CourseGrid = (props, {courses}) =>
     <div>
-        {/*<Link to="/courses/table">*/}
-        {/*    <i className="fas fa-2x fa-list float-right"></i>*/}
-        {/*</Link>*/}
+
 
 
         <div>
@@ -43,18 +41,7 @@ const CourseGrid = (props, {courses}) =>
                         course={course}
                     />
 
-                // <div className="card" style={{width: "18rem"}}>
-                //     <img src="..." className="card-img-top" alt="..."/>
-                //     <div className="card-body">
-                //         <h5 className="card-title">{course.title}</h5>
-                //         <p className="card-text">Some quick example text to
-                //             the cards content.</p>
-                //         <Link to="/editor" className="btn btn-primary">
-                //             {course.title}
-                //         </Link>
-                //     </div>
-                //
-                // </div>
+
             )
         }
         </div>
