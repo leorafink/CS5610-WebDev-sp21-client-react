@@ -66,6 +66,7 @@ export default class CourseManager extends React.Component {
                 this.setState(this.state)
             })
 
+        this.setState({newTitle: ""})
 
     }
 
