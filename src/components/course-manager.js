@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import CourseTable from "./course-table/course-table";
 import CourseGrid from "./course-grid/course-grid";
 import {Route, Link} from "react-router-dom";
@@ -7,13 +7,17 @@ import "./course-manager-style.css"
 
 export default class CourseManager extends React.Component {
     state = {
-        courses: []
+        courses: [],
+        newTitle: 'new'
     }
+    //newTitle = useState("")
+
 
     componentDidMount() {
         courseService.findAllCourses()
             .then(courses => this.setState({courses}))
     }
+
 
     updateCourse = (course) => {
 
@@ -51,7 +55,7 @@ export default class CourseManager extends React.Component {
 
     addCourse = () => {
         const newCourse = {
-            title: "New Course",
+            title: this.state.newTitle.toString(),
             owner: "me",
             lastModified: "2/12/2021"
         }
@@ -62,9 +66,19 @@ export default class CourseManager extends React.Component {
                 this.setState(this.state)
             })
 
+
     }
 
+    handleChange = event => {
+        const myVal = event.target.value;
+       this.setState({newTitle: myVal});
+    }
+
+
     render() {
+
+
+
         return (
             <div>
                 <Link to="/">
@@ -82,7 +96,12 @@ export default class CourseManager extends React.Component {
                             <h4 className="disappear LF-disappear">Course Manager</h4>
                         </div>
                         <div className="col-8">
-                            <input id="inputTitle" className="form-control" placeholder="testt"/>
+                            <input
+                                name="inputt"
+                                value={this.state.newTitle}
+                                className="form-control"
+                                onChange={this.handleChange}
+                                />
                         </div>
                         <div className="col-1">
                             {/*<i onClick={this.addCourse(document.getElementById("inputTitle").val())} className="fa fa-plus-circle fa-2x"></i>*/}

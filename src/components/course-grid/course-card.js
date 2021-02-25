@@ -23,7 +23,7 @@ const CourseCard = ({
     }
 
     return (
-        <div className="card LF-CardStyle container" >
+        <div className="card LF-CardStyle LF-CardStyle2 container" >
         <img src="..." className="card-img-top" alt="..."/>
         <div className="card-body">
             <h5 className="card-title">
