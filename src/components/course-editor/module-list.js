@@ -18,6 +18,7 @@ const ModuleList = (
                 modules.map(module =>
                 <li className='list-group-item'>
                    <EditableItem
+                       key={module._id}
                        deleteItem={deleteModule}
                        updateItem={updateModule}
                        item={module}/>
