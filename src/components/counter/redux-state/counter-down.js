@@ -1,6 +1,18 @@
 import React from 'react';
+import {connect} from "react-redux";
 
-const CounterDown = () =>
-    <button>Down</button>
+const CounterDown = ({down}) =>
+    <button onClick={down}>Down</button>
 
-export default CounterDown
+const propertyToDispatcher = (dispatch) => {
+    return {
+        down: () => {
+            dispatch({type: "DOWN"})
+        }
+    }
+}
+
+export default connect(
+    ()=>{},
+    propertyToDispatcher
+    )(CounterDown)

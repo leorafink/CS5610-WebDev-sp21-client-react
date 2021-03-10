@@ -1,6 +1,13 @@
 import React from 'react'
+import {connect} from "react-redux";
 
-const CounterDisplay = ({count = 321}) =>
-    <h1>Counter: {count}</h1>
+const CounterDisplay = ({theCount = 321}) =>
+    <h1>Counter: {theCount}</h1>
 
-export default CounterDisplay
+const stateToPropertyMapper = (state) => {
+    return {
+        theCount: state.count
+    }
+}
+
+export default connect(stateToPropertyMapper)(CounterDisplay)
