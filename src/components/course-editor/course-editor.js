@@ -46,7 +46,7 @@ const CourseEditor = ({history}) => {
 
             <div className="col-8">
                 <LessonTabs/>
-                <ul className="nav nav-tabs">
+                {/*<ul className="nav nav-tabs">
 
                     <li className="nav-item">
                         <a className="nav-link active" aria-current="page" href="#">
@@ -96,7 +96,7 @@ const CourseEditor = ({history}) => {
                         </a>
                     </li>
                 </ul>
-
+*/}
             </div>
 
 
@@ -107,7 +107,8 @@ const CourseEditor = ({history}) => {
          <div className="row">
             <div className="col-4">
                 <ModuleList/>
-                <ul className="list-group LF-ModuleTabs">
+
+                {/*<ul className="list-group LF-ModuleTabs">
                     <li className="list-group-item LF-ModuleTabs2">
                         Module 1
                         <i className="pull-right fa fa-times"></i>
@@ -141,11 +142,9 @@ const CourseEditor = ({history}) => {
                         <i className="pull-right fa fa-plus"></i>
                     </div>
 
-                    {/*<a href="../index.html" className="pull-right">*/}
-                    {/*    Home*/}
-                    {/*</a>*/}
-                </ul>
 
+                </ul>
+*/}
             </div>
 
 

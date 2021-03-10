@@ -1,19 +1,20 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import EditableItem from "../editable-item";
 
 const LessonTabs = (
     {
         lessons=[]
     }) =>
     <div>
-        <h2>Lesson Tabs</h2>
+        {/*<h2>Lesson Tabs</h2>*/}
         <ul className='nav nav-tabs'>
             {
                 lessons.map(lesson =>
                     <li className='nav-item'>
-                        <a className="nav-link" href="#">
-                            {lesson.title}
-                        </a>
+
+                            <EditableItem item={lesson}/>
+
                     </li>)
             }
         </ul>
