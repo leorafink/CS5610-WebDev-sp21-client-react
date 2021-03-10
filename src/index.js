@@ -10,8 +10,8 @@ import CounterRedux from "./components/counter/redux-state/counter-redux";
 
 ReactDOM.render(
  //<CounterReact/>,
-  //  <App/>,
-    <CounterRedux/>,
+   <App/>,
+  //  <CounterRedux/>,
   document.getElementById('root')
 );
 
