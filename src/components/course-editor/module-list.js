@@ -2,7 +2,9 @@ import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 import EditableItem from "../editable-item";
 import {useParams} from "react-router-dom";
-import {findModulesForCourse, createModule} from "../../services/module-service";
+//import {findModulesForCourse, createModule} from "../../services/module-service";
+import moduleService from "../../services/module-service"
+
 
 const ModuleList = (
     {
@@ -52,7 +54,7 @@ const stpm = (state) => ({
 
 const dtpm = (dispatch) => ({
     createModule: (courseId) => {
-        createModule(courseId, {title: 'New Module'})
+        moduleService.createModule(courseId, {title: 'New Module'})
             .then(module => dispatch({type: "CREATE_MODULE", module: module}))
 
     },
@@ -63,7 +65,7 @@ const dtpm = (dispatch) => ({
         dispatch({type: "DELETE_MODULE", moduleToDelete: moduleToDelete})
     },
     findModulesForCourse: (courseId) => {
-        findModulesForCourse(courseId)
+        moduleService.findModulesForCourse(courseId)
             .then(modules => dispatch({
                 type: "FIND_MODULES_FOR_COURSE",
                 modules: modules

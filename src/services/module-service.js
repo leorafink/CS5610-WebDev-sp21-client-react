@@ -5,7 +5,7 @@ export const createModule = (courseId, module) =>
         method: "POST",
         body: JSON.stringify(module),
         headers: {
-            'content-type': 'application-json'
+            'content-type': 'application/json'
         }
     })
         .then(response => response.json());
@@ -15,3 +15,8 @@ export const findModulesForCourse = (courseId) =>
     fetch(`${COURSES_URL}/${courseId}/modules`)
 .then(response => response.json());
 
+const api = {
+    createModule, findModulesForCourse
+}
+
+export default api
