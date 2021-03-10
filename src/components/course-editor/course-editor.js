@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, useParams, useHistory} from "react-router-dom";
 import "./course-editor-style.css"
 import moduleReducer from "../../reducers/module-reducer";
 import {combineReducers, createStore} from "redux";
@@ -15,9 +15,10 @@ const reducer = combineReducers({
 
 const store = createStore(reducer)
 
-const CourseEditor = ({history}) => {
+const CourseEditor = ({history, params}) => {
+    const {layout, courseId, moduleId} = useParams()
     return (
-        <Provider store={store}>
+         <Provider store={store}>
         <div className="container">
         <h1>
 
@@ -32,7 +33,13 @@ const CourseEditor = ({history}) => {
         </h1>
 
 
-
+{/*
+<ul>
+    <li>layout: {layout}</li>
+    <li>layout: {courseId}</li>
+    <li>layout: {moduleId}</li>
+</ul>
+*/}
 
 
         <div className="row LF-WebDevHeader">

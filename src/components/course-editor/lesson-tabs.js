@@ -1,24 +1,29 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import EditableItem from "../editable-item";
+import {useParams} from "react-router-dom";
 
 const LessonTabs = (
     {
         lessons=[]
-    }) =>
-    <div>
-        {/*<h2>Lesson Tabs</h2>*/}
+    }) => {
+    const {layout, courseId, moduleId, lessonId} = useParams()
+
+    return (<div>
+
         <ul className='nav nav-tabs'>
             {
                 lessons.map(lesson =>
                     <li className='nav-item'>
 
-                            <EditableItem item={lesson}/>
+                            <EditableItem
+                                to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lesson._id}`}
+                                item={lesson}/>
 
                     </li>)
             }
         </ul>
-    </div>
+    </div>)}
 
 const stpm = (state) => ({
     lessons: state.lessonReducer.lessons
