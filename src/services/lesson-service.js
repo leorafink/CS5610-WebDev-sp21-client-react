@@ -6,6 +6,16 @@ export const findLessonsForModule = (moduleId) =>
     fetch(`${MODULES_URL}/${moduleId}/lessons`)
         .then(response => response.json())
 
+export const createLessonForModule = (moduleId, lesson) =>
+    fetch(`${MODULES_URL}/${moduleId}/lessons`, {
+        method: "POST",
+        body: JSON.stringify(lesson),
+        headers: {
+            'content-type': 'application/json'
+        }
+    })
+        .then(response => response.json())
+
 export default {
-    findLessonsForModule
+    findLessonsForModule, createLessonForModule
 }

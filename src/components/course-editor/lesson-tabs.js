@@ -11,19 +11,15 @@ const LessonTabs = (
             {_id: "123", title: "Lesson B"},
             {_id: "123", title: "Lesson C"}
         ],
-        findLessonsForModule
+        findLessonsForModule,
+        createLessonForModule
     }) => {
     const {layout, courseId, moduleId, lessonId} = useParams();
 
     useEffect(() => {
+        console.log("LOAD LESSONS FOR MODULE: " + moduleId)
         findLessonsForModule(moduleId)
-    //     console.log("LOAD LESSONS FOR MODULE: " + moduleId)
-    //     if(moduleId !== "undefined" && typeof moduleId !== "undefined") {
-    //         findLessonsForModule(moduleId)
-    //     }
-    // }, [moduleId])
-        //findLessonsForModule(moduleId)
-    }, [])
+    }, [moduleId])
 
     return (<div>
 
@@ -37,7 +33,11 @@ const LessonTabs = (
                                 item={lesson}/>
 
                     </li>)
+
             }
+            <li>
+                <i onClick={() => createLessonForModule(moduleId)} className="fas fa-plus"></i>
+            </li>
         </ul>
     </div>)}
 
@@ -53,6 +53,14 @@ const dtpm = (dispatch) => ({
             .then(lessons => dispatch({
                 type: "FIND_LESSONS",
                 lessons: lessons
+            }))
+    },
+    createLessonForModule: (moduleId) => {
+        console.log("CREATE LESSON FOR MODULE" + moduleId)
+        lessonService.createLessonForModule(moduleId, {title: "New Lesson"})
+            .then(lesson => dispatch({
+                type: "CREATE_LESSON",
+                lesson
             }))
     }
 })
