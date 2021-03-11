@@ -30,7 +30,7 @@ const CourseCard = ({
 
                 {
                     !editing &&
-                    <Link to="/editor">
+                    <Link to={`/courses/table/edit/${course._id}`}>
                         {course.title}
                     </Link>
                 }
@@ -46,7 +46,7 @@ const CourseCard = ({
 
             <p className="card-text">Some quick example text to
                 the cards content.</p>
-            <Link to="/editor" className="btn btn-primary">
+            <Link to={`/courses/table/edit/${course._id}`} className="btn btn-primary">
                 {course.title}
             </Link>
 
