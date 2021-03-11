@@ -20,11 +20,13 @@ const ModuleList = (
         findModulesForCourse(courseId)
     }, [])
     return ( <div>
-        <ul>
+
+
+       {/* <ul>
             <li>layout: {layout}</li>
             <li>layout: {courseId}</li>
             <li>layout: {moduleId}</li>
-        </ul>
+        </ul>*/}
 
 
         {/*<h2>Module List</h2>*/}
