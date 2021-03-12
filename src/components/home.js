@@ -11,8 +11,8 @@ export default () =>
             <Link to="/courses/grid" className="list-group-item">
                 Courses Grid
             </Link>
-            <Link to="/courses/:layout/edit/:courseId" className="list-group-item">
-                Course Editor
-            </Link>
+            {/*<Link to="/courses/:layout/edit/:courseId" className="list-group-item">*/}
+            {/*    Course Editor*/}
+            {/*</Link>*/}
         </div>
     </>
