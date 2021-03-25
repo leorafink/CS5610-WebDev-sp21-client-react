@@ -52,6 +52,7 @@ const TopicPills = (
 
 const stpm = (state) => ({
     topics: state.topicReducer.topics
+
 })
 
 const dtpm = (dispatch) => ({
