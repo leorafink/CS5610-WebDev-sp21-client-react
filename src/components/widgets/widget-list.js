@@ -17,9 +17,11 @@ const WidgetList = (
         findWidgetsForTopic
 
     }) => {
-    const {layout, courseId, moduleId, lessonId, topicId, widgetId} = useParams()
+    const {layout, courseId, moduleId, lessonId, topicId} = useParams()
    // const [widget, setWidget] = useState({})
     const [editingWidget, setEditingWidget] = useState({});
+    const [editing, setEditing] = useState(false)
+
     useEffect(() => {
         //console.log("LOAD LESSONS FOR MODULE: " + moduleId)
         if(topicId !== "undefined" && typeof topicId !== "undefined") {
@@ -43,15 +45,22 @@ const WidgetList = (
                     widgets.map(widget =>
                     <li key={widget.id} className="list-group-item">
                         {
-                            editingWidget.id === widget.id &&
+                            //editingWidget.id === widget.id &&
+                            editing &&
                                 <>
-                                    <i onClick={() => updateWidget(widget)} className="fas fa-2x fa-check float-right"></i>
-                                    <i onClick={() => deleteWidget(widget)} className="fas fa-2x fa-trash float-right"></i>
+                                    <i onClick={() => {
+                                        updateWidget(widget)
+                                        setEditing(false)
+                                    }} className="fas fa-2x fa-check float-right"></i>
+                                    <i onClick={() =>
+                                        deleteWidget(widget)
+                                    } className="fas fa-2x fa-trash float-right"></i>
                                 </>
                         }
                         {
-                            editingWidget.id !== widget.id &&
-                            <i onClick={() => setEditingWidget(widget)} className="fas fa-2x fa-cog float-right"></i>
+                          //  editingWidget.id !== widget.id &&
+                            !editing &&
+                            <i onClick={() => setEditing(true)} className="fas fa-2x fa-cog float-right"></i>
                         }
 
 
