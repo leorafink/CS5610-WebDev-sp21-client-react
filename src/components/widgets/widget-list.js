@@ -66,11 +66,17 @@ const WidgetList = (
 
                         {
                             widget.type === "HEADING" &&
-                                <HeadingWidget widget={widget}/>
+                                <HeadingWidget
+                                    widget={widget}
+                                    editing={editing}
+                                />
                         }
                         {
                             widget.type === "PARAGRAPH" &&
-                            <ParagraphWidget widget={widget}/>
+                            <ParagraphWidget
+                                widget={widget}
+                                editing={editing}
+                            />
                         }
 
                        {/* <EditableItem
