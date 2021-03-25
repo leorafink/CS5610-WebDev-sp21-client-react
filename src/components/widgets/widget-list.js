@@ -17,11 +17,11 @@ const WidgetList = (
         findWidgetsForTopic
 
     }) => {
-    const {layout, courseId, moduleId, lessonId, topicId} = useParams()
+    const {layout, courseId, moduleId, lessonId, topicId, widget} = useParams()
    // const [widget, setWidget] = useState({})
     const [editingWidget, setEditingWidget] = useState({});
     const [editing, setEditing] = useState(false)
-
+    // const [itemCache, setItemCache] = useState(widget)
     useEffect(() => {
         //console.log("LOAD LESSONS FOR MODULE: " + moduleId)
         if(topicId !== "undefined" && typeof topicId !== "undefined") {
@@ -69,6 +69,7 @@ const WidgetList = (
                                 <HeadingWidget
                                     widget={widget}
                                     editing={editing}
+                                    // onChange={(e) => setItemCache({...itemCache, title: e.target.value})}
                                 />
                         }
                         {
@@ -76,6 +77,7 @@ const WidgetList = (
                             <ParagraphWidget
                                 widget={widget}
                                 editing={editing}
+                                // onChange={(e) => setItemCache({...itemCache, title: e.target.value})}
                             />
                         }
 
@@ -106,7 +108,7 @@ const dtpm = (dispatch) => ({
     },
     createWidget: (topicId) => {
         // console.log("CREATE LESSON FOR MODULE" + moduleId)
-        widgetService.createWidget(topicId, {type: "HEADING", size: 2, text: "New Widget"})
+        widgetService.createWidget(topicId, {type: "HEADING", size: 1, text: "New Widget"})
             .then(widget => dispatch({
                 type: "CREATE_WIDGET",
                 widget
