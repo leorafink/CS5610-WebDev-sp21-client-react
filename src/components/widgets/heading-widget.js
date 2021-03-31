@@ -1,11 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 
-const HeadingWidget = ({widget, editing, /*setWidget*/}) => {
+const HeadingWidget = ({widget, /*editing,*/ update, deletee, /*setediting*/ /*setWidget*/}) => {
+    const [editing, setEditing] = useState(false)
     return (
         <>
             {
                 editing &&
                 <>
+                    <i onClick={() => {
+                        update(widget)
+                        setEditing(false)
+                    }} className="fas fa-2x fa-check float-right"></i>
+                    <i onClick={() =>
+                        deletee(widget)
+                    } className="fas fa-2x fa-trash float-right"></i>
+
                     <input
                         // onChange={(e) => setWidget(widget => ({...widget, text: e.target.value}))}
                         value={widget.text}
@@ -28,6 +37,7 @@ const HeadingWidget = ({widget, editing, /*setWidget*/}) => {
             {
                 !editing &&
                 <>
+                    <i onClick={() => setEditing(true)} className="fas fa-2x fa-cog float-right"></i>
                     {widget.size === 1 && <h1>{widget.text}</h1>}
                     {widget.size === 2 && <h2>{widget.text}</h2>}
                     {widget.size === 3 && <h3>{widget.text}</h3>}

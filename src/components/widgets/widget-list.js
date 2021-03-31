@@ -20,7 +20,7 @@ const WidgetList = (
     const {layout, courseId, moduleId, lessonId, topicId, widget} = useParams()
    // const [widget, setWidget] = useState({})
     const [editingWidget, setEditingWidget] = useState({});
-    const [editing, setEditing] = useState(false)
+    //const [editing, setEditing] = useState(false)
     // const [itemCache, setItemCache] = useState(widget)
     useEffect(() => {
         //console.log("LOAD LESSONS FOR MODULE: " + moduleId)
@@ -43,8 +43,9 @@ const WidgetList = (
             <ul className="list-group">
                 {
                     widgets.map(widget =>
+
                     <li key={widget.id} className="list-group-item">
-                        {
+                        {/*{
                             //editingWidget.id === widget.id &&
                             editing &&
                                 <>
@@ -56,19 +57,22 @@ const WidgetList = (
                                         deleteWidget(widget)
                                     } className="fas fa-2x fa-trash float-right"></i>
                                 </>
-                        }
-                        {
+                        }*/}
+                        {/*{
                           //  editingWidget.id !== widget.id &&
                             !editing &&
                             <i onClick={() => setEditing(true)} className="fas fa-2x fa-cog float-right"></i>
-                        }
+                        }*/}
 
 
                         {
                             widget.type === "HEADING" &&
                                 <HeadingWidget
                                     widget={widget}
-                                    editing={editing}
+                                    //editing={editing}
+                                    update={updateWidget}
+                                    deletee={deleteWidget}
+                                  //  setediting={setEditing}
                                     // onChange={(e) => setItemCache({...itemCache, title: e.target.value})}
                                 />
                         }
@@ -76,7 +80,10 @@ const WidgetList = (
                             widget.type === "PARAGRAPH" &&
                             <ParagraphWidget
                                 widget={widget}
-                                editing={editing}
+                              //  editing={editing}
+                                update={updateWidget}
+                                deletee={deleteWidget}
+                             //   setediting={setEditing}
                                 // onChange={(e) => setItemCache({...itemCache, title: e.target.value})}
                             />
                         }
@@ -88,7 +95,9 @@ const WidgetList = (
                             deleteItem={deleteWidget}
                             updateItem={updateWidget}
                             item={widget}/>*/}
-                    </li>)
+                    </li>
+                    )
+
                 }
             </ul>
         </div>
