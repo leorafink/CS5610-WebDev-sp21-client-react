@@ -18,6 +18,15 @@ const HeadingWidget = ({widget, /*editing,*/ update, deletee, /*setWidget*/}) =>
                         deletee(widget)
                     } className="fas fa-2x fa-trash float-right"></i>
 
+                    <select
+                        //  onChange={(e) => setWidget(widget => ({...widget, size: parseInt(e.target.value)}))}
+                        value={widget.type}
+                        className="form-control">
+                        <option value={"PARAGRAPH"}>Paragraph</option>
+                        <option value={"HEADING"}>Heading</option>
+
+                    </select>
+
                     <input
                       //  onChange={(e) => setWidget(widgett => ({...widgett, text: e.target.value}))}
                        // onChange={(e) => setItemCache({...itemCache, title: e.target.value})}

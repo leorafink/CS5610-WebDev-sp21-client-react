@@ -14,7 +14,14 @@ const ParagraphWidget = ({widget, /*editing,*/ update, deletee, /*setediting*/})
             <i onClick={() =>
                 deletee(widget)
             } className="fas fa-2x fa-trash float-right"></i>
+            <select
+                //  onChange={(e) => setWidget(widget => ({...widget, size: parseInt(e.target.value)}))}
+                value={widget.type}
+                className="form-control">
+                <option value={"PARAGRAPH"}>Paragraph</option>
+                <option value={"HEADING"}>Heading</option>
 
+            </select>
             <textarea
                 // onChange={(e) => setWidget({...widget, text: e.target.value})}
                 value={widget.text}
