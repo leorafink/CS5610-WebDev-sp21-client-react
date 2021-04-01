@@ -1,7 +1,10 @@
 import React, {useState} from "react";
 
-const HeadingWidget = ({widget, /*editing,*/ update, deletee, /*setediting*/ /*setWidget*/}) => {
+const HeadingWidget = ({widget, /*editing,*/ update, deletee, /*setWidget*/}) => {
     const [editing, setEditing] = useState(false)
+    //const [widgett, setWidget] = useState({widget})
+  // const [widgett, setWidget] = useState(widget)
+
     return (
         <>
             {
@@ -16,11 +19,13 @@ const HeadingWidget = ({widget, /*editing,*/ update, deletee, /*setediting*/ /*s
                     } className="fas fa-2x fa-trash float-right"></i>
 
                     <input
-                        // onChange={(e) => setWidget(widget => ({...widget, text: e.target.value}))}
+                      //  onChange={(e) => setWidget(widgett => ({...widgett, text: e.target.value}))}
+                       // onChange={(e) => setItemCache({...itemCache, title: e.target.value})}
+                      //  onChange={(e) => setWidget({...widget, text: e.target.value})}
                         value={widget.text}
                         className="form-control"/>
                     <select
-                        // onChange={(e) => setWidget(widget => ({...widget, size: parseInt(e.target.value)}))}
+                      //  onChange={(e) => setWidget(widget => ({...widget, size: parseInt(e.target.value)}))}
                         value={widget.size}
                         className="form-control">
                         <option value={1}>Heading 1</option>

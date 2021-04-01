@@ -25,13 +25,14 @@ const ParagraphWidget = ({widget, /*editing,*/ update, deletee, /*setediting*/})
                 !editing &&
                     <>
                         <i onClick={() => setEditing(true)} className="fas fa-2x fa-cog float-right"></i>
-                        <textarea value={widget.text} className="form-control"></textarea>
+                        {/*<textarea value={widget.text} className="form-control"></textarea>*/}
+                        <p>{widget.text}</p>
                     </>
 
             }
-    <div>
-        <h2>Paragraph Widget {widget.id}</h2>
-    </div>
+    {/*<div>*/}
+    {/*    <h2>Paragraph Widget {widget.id}</h2>*/}
+    {/*</div>*/}
         </>
     )}
 export default ParagraphWidget

@@ -17,8 +17,8 @@ const WidgetList = (
         findWidgetsForTopic
 
     }) => {
-    const {layout, courseId, moduleId, lessonId, topicId, widget} = useParams()
-   // const [widget, setWidget] = useState({})
+    const {layout, courseId, moduleId, lessonId, topicId} = useParams()
+ //   const [widget, setWidget] = useState({})
     const [editingWidget, setEditingWidget] = useState({});
     //const [editing, setEditing] = useState(false)
     // const [itemCache, setItemCache] = useState(widget)
@@ -43,7 +43,7 @@ const WidgetList = (
             <ul className="list-group">
                 {
                     widgets.map(widget =>
-
+                  widget && //HEREEEEEEEEEEE
                     <li key={widget.id} className="list-group-item">
                         {/*{
                             //editingWidget.id === widget.id &&
@@ -69,10 +69,10 @@ const WidgetList = (
                             widget.type === "HEADING" &&
                                 <HeadingWidget
                                     widget={widget}
-                                    //editing={editing}
                                     update={updateWidget}
                                     deletee={deleteWidget}
-                                  //  setediting={setEditing}
+                              //      setwidget={setWidget}
+
                                     // onChange={(e) => setItemCache({...itemCache, title: e.target.value})}
                                 />
                         }
@@ -80,21 +80,13 @@ const WidgetList = (
                             widget.type === "PARAGRAPH" &&
                             <ParagraphWidget
                                 widget={widget}
-                              //  editing={editing}
                                 update={updateWidget}
                                 deletee={deleteWidget}
-                             //   setediting={setEditing}
+                             //   setwidget={setWidget}
                                 // onChange={(e) => setItemCache({...itemCache, title: e.target.value})}
                             />
                         }
 
-                       {/* <EditableItem
-                            to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lessonId}/topics/${topicId}/widgets/${widget._id}`}
-                            key={widget._id}
-                            active={widget._id === widgetId}
-                            deleteItem={deleteWidget}
-                            updateItem={updateWidget}
-                            item={widget}/>*/}
                     </li>
                     )
 
