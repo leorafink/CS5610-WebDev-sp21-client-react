@@ -27,14 +27,7 @@ const ParagraphWidget = ({widget, /*editing,*/ update, deletee, /*setediting*/})
 
             </select>
 
-            {/*<select*/}
-            {/*    //  onChange={(e) => setWidget(widget => ({...widget, size: parseInt(e.target.value)}))}*/}
-            {/*    defaultValue={widget.type}*/}
-            {/*    className="form-control">*/}
-            {/*    <option value={"PARAGRAPH"}>Paragraph</option>*/}
-            {/*    <option value={"HEADING"}>Heading</option>*/}
 
-            {/*</select>*/}
             <textarea
                 // onChange={(e) => setWidget({...widget, text: e.target.value})}
                 defaultValue={widget.text}

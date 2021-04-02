@@ -42,7 +42,7 @@ const HeadingWidget = (
                         defaultValue={widget.text}
                         className="form-control"/>
                     <select
-                      //  onChange={(e) => setWidget(widget => ({...widget, size: parseInt(e.target.value)}))}
+                        onChange={(e) => setWidget({...widget, size: parseInt(e.target.value)})}
                         defaultValue={widget.size}
                         className="form-control">
                         <option value={1}>Heading 1</option>
