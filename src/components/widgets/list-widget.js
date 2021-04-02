@@ -5,7 +5,7 @@ const ListWidget = ({widget, update, deletee}) => {
     const [editing, setEditing] = useState(false)
     const [widgett, setWidget] = useState({widget})
 
-    return(
+    return (
         <>
 
             {
@@ -33,11 +33,27 @@ const ListWidget = ({widget, update, deletee}) => {
 
                     </select>
 
+                    <form className="container-fluid">
+                        <input
+                            type="radio"
+                            name="ordering"
+                            onClick={(e) => setWidget({...widget, ordered: true})}
+                        /> Ordered
+                        <input
+                            type="radio"
+                            name="ordering"
+                            onClick={(e) => setWidget({...widget, ordered: false})}
+                        /> Unordered
+                    </form>
 
-                    <input type="checkbox"/> Ordered
                     <br/>
                     List Items
-                    <textarea rows={10} value={widget.text} className="form-control">
+                    <textarea
+                        onChange={(e) => setWidget({...widget, text: e.target.value})}
+
+                        rows={10}
+                        defaultValue={widget.text}
+                        className="form-control">
 
                     </textarea>
 
@@ -54,7 +70,7 @@ const ListWidget = ({widget, update, deletee}) => {
                         <ol>
                             {
                                 widget.text.split("\n").map(item => {
-                                    return(
+                                    return (
                                         <li>{item}</li>
                                     )
                                 })
@@ -67,7 +83,7 @@ const ListWidget = ({widget, update, deletee}) => {
                         <ul>
                             {
                                 widget.text.split("\n").map(item => {
-                                    return(
+                                    return (
                                         <li>{item}</li>
                                     )
                                 })

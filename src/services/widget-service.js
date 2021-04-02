@@ -1,9 +1,9 @@
 
 
-//const WIDGETS_URL = "https://wbdv-generic-server.herokuapp.com/api/leorafink2/topics"
-const two_URL = "http://localhost:8080/api/widgets"
-const WIDGETS_URL = "http://localhost:8080/api/topics"
-//"https://wbdv-generic-server.herokuapp.com/api/leorafink2/widgets"
+const WIDGETS_URL = "https://wbdv-generic-server.herokuapp.com/api/leorafink2/topics"
+//const two_URL = "http://localhost:8080/api/widgets"
+//const WIDGETS_URL = "http://localhost:8080/api/topics"
+const two_URL = "https://wbdv-generic-server.herokuapp.com/api/leorafink2/widgets"
 
 export const findWidgetsForTopic = (tid) =>
     fetch(`${WIDGETS_URL}/${tid}/widgets`)
