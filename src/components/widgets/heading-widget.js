@@ -1,8 +1,14 @@
 import React, {useState} from "react";
 
-const HeadingWidget = ({widget, /*editing,*/ update, deletee, /*setWidget*/}) => {
+const HeadingWidget = (
+    {
+        widget,
+        /*editing,*/
+        update,
+        deletee,
+        /*setWidget*/}) => {
     const [editing, setEditing] = useState(false)
-    //const [widgett, setWidget] = useState({widget})
+    const [widgett, setWidget] = useState({widget})
   // const [widgett, setWidget] = useState(widget)
 
     return (
@@ -11,7 +17,7 @@ const HeadingWidget = ({widget, /*editing,*/ update, deletee, /*setWidget*/}) =>
                 editing &&
                 <>
                     <i onClick={() => {
-                        update(widget)
+                        update(widgett)
                         setEditing(false)
                     }} className="fas fa-2x fa-check float-right"></i>
                     <i onClick={() =>
@@ -19,11 +25,13 @@ const HeadingWidget = ({widget, /*editing,*/ update, deletee, /*setWidget*/}) =>
                     } className="fas fa-2x fa-trash float-right"></i>
 
                     <select
-                        //  onChange={(e) => setWidget(widget => ({...widget, size: parseInt(e.target.value)}))}
-                        value={widget.type}
+                        onChange={(e) => setWidget({...widget, type: e.target.value})}
+                        //value={widget.type}
+                        defaultValue={widgett.type}
                         className="form-control">
-                        <option value={"PARAGRAPH"}>Paragraph</option>
+
                         <option value={"HEADING"}>Heading</option>
+                        <option value={"PARAGRAPH"}>Paragraph</option>
 
                     </select>
 
@@ -31,11 +39,11 @@ const HeadingWidget = ({widget, /*editing,*/ update, deletee, /*setWidget*/}) =>
                       //  onChange={(e) => setWidget(widgett => ({...widgett, text: e.target.value}))}
                        // onChange={(e) => setItemCache({...itemCache, title: e.target.value})}
                       //  onChange={(e) => setWidget({...widget, text: e.target.value})}
-                        value={widget.text}
+                        defaultValue={widget.text}
                         className="form-control"/>
                     <select
                       //  onChange={(e) => setWidget(widget => ({...widget, size: parseInt(e.target.value)}))}
-                        value={widget.size}
+                        defaultValue={widget.size}
                         className="form-control">
                         <option value={1}>Heading 1</option>
                         <option value={2}>Heading 2</option>

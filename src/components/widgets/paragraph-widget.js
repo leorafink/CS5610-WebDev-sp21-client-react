@@ -2,29 +2,42 @@ import React, {useState} from "react";
 
 const ParagraphWidget = ({widget, /*editing,*/ update, deletee, /*setediting*/}) => {
     const [editing, setEditing] = useState(false)
+    const [widgett, setWidget] = useState({widget})
     return(
         <>
         {
             editing &&
         <>
             <i onClick={() => {
-                update(widget)
+                update(widgett)
                 setEditing(false)
             }} className="fas fa-2x fa-check float-right"></i>
             <i onClick={() =>
                 deletee(widget)
             } className="fas fa-2x fa-trash float-right"></i>
+
             <select
-                //  onChange={(e) => setWidget(widget => ({...widget, size: parseInt(e.target.value)}))}
-                value={widget.type}
+                onChange={(e) => setWidget({...widget, type: e.target.value})}
+                //value={widget.type}
+                defaultValue={widget.type}
                 className="form-control">
-                <option value={"PARAGRAPH"}>Paragraph</option>
+
                 <option value={"HEADING"}>Heading</option>
+                <option value={"PARAGRAPH"}>Paragraph</option>
 
             </select>
+
+            {/*<select*/}
+            {/*    //  onChange={(e) => setWidget(widget => ({...widget, size: parseInt(e.target.value)}))}*/}
+            {/*    defaultValue={widget.type}*/}
+            {/*    className="form-control">*/}
+            {/*    <option value={"PARAGRAPH"}>Paragraph</option>*/}
+            {/*    <option value={"HEADING"}>Heading</option>*/}
+
+            {/*</select>*/}
             <textarea
                 // onChange={(e) => setWidget({...widget, text: e.target.value})}
-                value={widget.text}
+                defaultValue={widget.text}
                 className="form-control"></textarea>
         </>
         }
