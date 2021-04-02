@@ -29,6 +29,7 @@ const ParagraphWidget = ({widget, /*editing,*/ update, deletee, /*setediting*/})
 
 
             <textarea
+                onChange={(e) => setWidget({...widget, text: e.target.value})}
                 // onChange={(e) => setWidget({...widget, text: e.target.value})}
                 defaultValue={widget.text}
                 className="form-control"></textarea>

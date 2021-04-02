@@ -36,7 +36,9 @@ const HeadingWidget = (
                     </select>
 
                     <input
-                      //  onChange={(e) => setWidget(widgett => ({...widgett, text: e.target.value}))}
+                        onChange={(e) => setWidget({...widget, text: e.target.value})}
+
+                        //  onChange={(e) => setWidget(widgett => ({...widgett, text: e.target.value}))}
                        // onChange={(e) => setItemCache({...itemCache, title: e.target.value})}
                       //  onChange={(e) => setWidget({...widget, text: e.target.value})}
                         defaultValue={widget.text}
