@@ -32,6 +32,8 @@ const HeadingWidget = (
 
                         <option value={"HEADING"}>Heading</option>
                         <option value={"PARAGRAPH"}>Paragraph</option>
+                        <option value={"LIST"}>List</option>
+                        <option value={"IMAGE"}>Image</option>
 
                     </select>
 
@@ -70,9 +72,7 @@ const HeadingWidget = (
                     {widget.size === 6 && <h6>{widget.text}</h6>}
                 </>
             }
-            {/*<div>
-                <h2>Heading Widget {widget.id}</h2>
-            </div>*/}
+
         </>)
 }
 

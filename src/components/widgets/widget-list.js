@@ -7,6 +7,8 @@ import {connect} from "react-redux";
 import widgetReducer from "../../reducers/widget-reducer";
 import widgetService from "../../services/widget-service"
 import EditableItem from "../editable-item";
+import ListWidget from "./list-widget";
+import ImageWidget from "./image-widget";
 
 const WidgetList = (
     {
@@ -83,6 +85,26 @@ const WidgetList = (
                                 update={updateWidget}
                                 deletee={deleteWidget}
                              //   setwidget={setWidget}
+                                // onChange={(e) => setItemCache({...itemCache, title: e.target.value})}
+                            />
+                        }
+                        {
+                            widget.type === "LIST" &&
+                            <ListWidget
+                                widget={widget}
+                                update={updateWidget}
+                                deletee={deleteWidget}
+                                //   setwidget={setWidget}
+                                // onChange={(e) => setItemCache({...itemCache, title: e.target.value})}
+                            />
+                        }
+                        {
+                            widget.type === "IMAGE" &&
+                            <ImageWidget
+                                widget={widget}
+                                update={updateWidget}
+                                deletee={deleteWidget}
+                                //   setwidget={setWidget}
                                 // onChange={(e) => setItemCache({...itemCache, title: e.target.value})}
                             />
                         }
