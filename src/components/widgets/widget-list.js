@@ -134,7 +134,7 @@ const dtpm = (dispatch) => ({
         widgetService.createWidget(topicId, {type: "HEADING", size: 1, text: "New Widget"})
             .then(widget => dispatch({
                 type: "CREATE_WIDGET",
-                widget
+                widget: widget
             }))
     },
     deleteWidget: (widgetToDelete) => {

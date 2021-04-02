@@ -9,7 +9,7 @@ const widgetReducer = (state = initialState, action) => {
                 ...state,
                 widgets: [
                     ...state.widgets,
-                    action.widgets
+                    action.widget
                 ]
             }
         case "FIND_WIDGET":
