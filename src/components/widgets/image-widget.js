@@ -21,7 +21,7 @@ const ImageWidget = ({widget, update, deletee}) => {
                     <select
                         onChange={(e) => setWidget({...widget, type: e.target.value})}
                         //value={widget.type}
-                        defaultValue={widget.type}
+                        defaultValue={widgett.type}
                         className="form-control">
 
                         <option value={"HEADING"}>Heading</option>

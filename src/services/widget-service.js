@@ -1,9 +1,9 @@
 
 
-const WIDGETS_URL = "https://wbdv-generic-server.herokuapp.com/api/leorafink2/topics"
-//const two_URL = "http://localhost:8080/api/widgets"
-//const WIDGETS_URL = "http://localhost:8080/api/topics"
-const two_URL = "https://wbdv-generic-server.herokuapp.com/api/leorafink2/widgets"
+//const WIDGETS_URL = "https://wbdv-generic-server.herokuapp.com/api/leorafink2/topics"
+ const two_URL = "http://localhost:8080/api/widgets"
+const WIDGETS_URL = "http://localhost:8080/api/topics"
+//const two_URL = "https://wbdv-generic-server.herokuapp.com/api/leorafink2/widgets"
 
 export const findWidgetsForTopic = (tid) =>
     fetch(`${WIDGETS_URL}/${tid}/widgets`)
@@ -26,6 +26,7 @@ export const deleteWidget = (wid) =>
         .then(response => response.json());
 
 export const updateWidget = (wid, widget) =>
+    // console.log("Check",wid)
     fetch(`${two_URL}/${wid}`, {
         method: "PUT",
         body: JSON.stringify(widget),
@@ -33,6 +34,7 @@ export const updateWidget = (wid, widget) =>
             'content-type': 'application/json'
         }
     })
+
         .then(response => response.json());
 
 export default {

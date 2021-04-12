@@ -138,14 +138,15 @@ const dtpm = (dispatch) => ({
             }))
     },
     deleteWidget: (widgetToDelete) => {
-        widgetService.deleteWidget(widgetToDelete._id)
+        widgetService.deleteWidget(widgetToDelete.id)
             .then(status => dispatch({
                 type: "DELETE_WIDGET",
                 widgetToDelete: widgetToDelete}))
 
     },
     updateWidget: (newItem) => {
-        widgetService.updateWidget(newItem._id, newItem)
+        console.log(newItem)
+        widgetService.updateWidget(newItem.id, newItem)
             .then(status => dispatch({type: "UPDATE_WIDGET", updateWidget: newItem}))
 
     },
