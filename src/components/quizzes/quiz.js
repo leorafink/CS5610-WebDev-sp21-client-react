@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
+import Question from "./questions/question";
 
 const Quiz = () => {
     const {courseId, quizId} = useParams();
@@ -19,8 +20,7 @@ const Quiz = () => {
                     {
                         questions.map(question =>
                         <li>
-                            <h3>{question.title}</h3>
-                            {question.question}
+                           <Question question={question}/>
                         </li>)
                     }
                 </ul>
