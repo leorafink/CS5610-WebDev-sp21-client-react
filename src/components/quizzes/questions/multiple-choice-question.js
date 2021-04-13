@@ -2,16 +2,17 @@ import React, {useState} from "react";
 
 const MultipleChoiceQuestion = ({question}) => {
     const [answer, setAnswer] = useState("");
+    const [grade, setGrade] = useState(false);
     return(
         <div>
             <h4>{question.question}
 
                 {
-                    answer !== "" && answer.toString() === question.correct &&
+                    answer !== "" && answer.toString() === question.correct && grade === true &&
                     <i className="fas fa-check"></i>
                 }
                 {
-                    answer !== "" && answer.toString() !== question.correct &&
+                    answer !== "" && answer.toString() !== question.correct && grade === true &&
                     <i className="fas fa-times"></i>
                 }
 
@@ -52,7 +53,11 @@ const MultipleChoiceQuestion = ({question}) => {
                 <p>Your answer: </p>
             }
 
-            <button className="btn btn-success">GRADE</button>
+            <button
+                className="btn btn-success"
+                onClick={() => setGrade(true)}>
+                GRADE
+            </button>
 
         </div>
     )

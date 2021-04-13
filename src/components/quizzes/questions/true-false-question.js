@@ -2,16 +2,17 @@ import React, {useState} from "react";
 
 const TrueFalseQuestion = ({question}) => {
     const [answer, setAnswer] = useState(null);
+    const [grade, setGrade] = useState(false);
     return (
         <div>
             <h4>
                 {question.question}
                 {
-                   answer !== null && answer.toString() === question.correct &&
+                   answer !== null && answer.toString() === question.correct && grade === true &&
                     <i className="fas fa-check"></i>
                 }
                 {
-                    answer !== null && answer.toString() !== question.correct &&
+                    answer !== null && answer.toString() !== question.correct && grade === true &&
                     <i className="fas fa-times"></i>
                 }
 
@@ -51,7 +52,11 @@ const TrueFalseQuestion = ({question}) => {
                 <p>Your answer: </p>
             }
 
-            <button className="btn btn-success">GRADE</button>
+            <button
+                className="btn btn-success"
+                onClick={() => setGrade(true)}>
+                GRADE
+            </button>
         </div>
     )
 }
