@@ -28,11 +28,12 @@ const MultipleChoiceQuestion = ({question}) => {
             {
                 question.choices.map((choice) => {
                     return(
-                        <li className="list-group-item">
+                        <li className={`list-group-item ${choice === question.correct && grade === true ? "list-group-item-success" : "list-group-item"}`}>
                         <label>
                             <input
                                 type="radio"
                                 onClick={() => setAnswer(choice)}
+
                                 name={question._id}/>
                             {choice}
                         </label>

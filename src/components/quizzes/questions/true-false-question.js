@@ -24,14 +24,14 @@ const TrueFalseQuestion = ({question}) => {
             <br/>
             <ul className="list-group">
 
-            <li className="list-group-item">
-                <label><input
+                <li className="list-group-item"> {/*className={`list-group-item ${answer !== null && answer === Boolean(question.correct) && grade === true ? "list-group-item-success" : "list-group-item"}`}>*/}
+                    <label><input
                     type="radio"
                     onClick={() => setAnswer(true)}
                     name={question._id}/>True</label>
             </li>
 
-                <li className="list-group-item">
+                <li className="list-group-item"> {/*className={`list-group-item ${answer !== null && answer === Boolean(question.correct) && grade === true ? "list-group-item-success" : "list-group-item"}`}>*/}
                 <label><input
                     type="radio"
                     onClick={() => setAnswer(false)}
