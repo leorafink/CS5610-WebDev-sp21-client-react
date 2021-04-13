@@ -26,7 +26,6 @@ const TrueFalseQuestion = ({question}) => {
             <li className="list-group-item">
                 <label><input
                     type="radio"
-
                     onClick={() => setAnswer(true)}
                     name={question._id}/>True</label>
             </li>
@@ -34,12 +33,14 @@ const TrueFalseQuestion = ({question}) => {
                 <li className="list-group-item">
                 <label><input
                     type="radio"
-                    className="list-group-item"
                     onClick={() => setAnswer(false)}
                     name={question._id}/>False</label>
                 </li>
 
             </ul>
+
+            <br/>
+           Your answer: {JSON.stringify(answer)}
         </div>
     )
 }
