@@ -40,6 +40,19 @@ const MultipleChoiceQuestion = ({question}) => {
                 })
             }
             </ul>
+            <br/>
+
+            {
+                answer !== "" &&
+                    <p>Your answer: {JSON.stringify(answer)}</p>
+
+            }
+            {
+                answer === "" &&
+                <p>Your answer: </p>
+            }
+
+            <button className="btn btn-success">GRADE</button>
 
         </div>
     )

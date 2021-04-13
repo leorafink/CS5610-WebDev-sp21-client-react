@@ -40,7 +40,18 @@ const TrueFalseQuestion = ({question}) => {
             </ul>
 
             <br/>
-           Your answer: {JSON.stringify(answer)}
+
+            {
+                answer != null &&
+                <p>Your answer: {JSON.stringify(answer)}</p>
+
+            }
+            {
+                answer == null &&
+                <p>Your answer: </p>
+            }
+
+            <button className="btn btn-success">GRADE</button>
         </div>
     )
 }
